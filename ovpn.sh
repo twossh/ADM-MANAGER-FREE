@@ -93,7 +93,7 @@ echo -e "\033[1;36mQUAL E A SUA OPÇAO?\033[0m"
 read -p ": " opcao
 
 case $opcao in
-  3) nano /etc/openvpn/client
+  3) nano /etc/openvpn/client-common.txt
   ovpn
   exit
   ;;
