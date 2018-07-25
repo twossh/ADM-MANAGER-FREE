@@ -212,12 +212,12 @@ else
 	echo -e "$linha"
 	echo ""
 	echo -e "\033[01;36m QUAL A PORTA DESEJA USAR\033[01;37m ?"
-	read -p " PORTA: " -e -i 1194 PORT
+	read -p " PORTA: " -e -i 443 PORT
 	echo ""
   echo -e "\033[01;36m QUAL DNS DESEJA USAR ?"
   	echo ""
 	echo -e "\033[1;36m|\033[1;31m1\033[1;36m| Sistema"
-	echo -e "\033[1;36m|\033[1;31m2\033[1;36m| Google \033[1;31m(Recomendado)"
+	echo -e "\033[1;36m|\033[1;31m2\033[1;36m| Google"
 	echo -e "\033[1;36m|\033[1;31m3\033[1;36m| OpenDNS"
 	echo -e "\033[1;36m|\033[1;31m4\033[1;36m| Cloudflare"
 	echo -e "\033[1;36m|\033[1;31m5\033[1;36m| Level 3"
