@@ -65,7 +65,7 @@ echo  -e "\033[0m"
 echo -e "\033[1;36mFAZENDO DOWLOAD...\033[0m"
 cd /root/
 sleep 1s
-wget -O manager https://www.dropbox.com/s/h965902dgx7d93l/admmanager.zip?dl=0 -o /dev/null
+wget -O manager https://raw.githubusercontent.com/twossh/ADM-MANAGER/master/admmanager.zip -o /dev/null
 sleep 4s
 echo -e "\033[1;36mPREPARANDO ARQUIVOS...\033[0m"
 sleep 4s
