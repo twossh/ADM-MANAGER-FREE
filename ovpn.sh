@@ -52,10 +52,15 @@ newclient () {
 # I do this to make the script compatible with NATed servers (lowendspirit.com)
 # and to avoid getting an IPv6.
 IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+if [[ "$IP" = "" ]]; then
+		IP=$(wget -4qO- "http://whatismyip.akamai.com/")
+fi
 
 if [[ -e /etc/openvpn/server.conf ]]; then
 	while :
 	do
+	#!/bin/bash
+
 	clear
 if [ $(id -u) -eq 0 ]
 then
@@ -76,7 +81,7 @@ else
 fi
 
 clear
-echo -e "\033[36;37m PAINEL DE GERENCIAMENTO DA VPS, OS ARQUIVOS SERAO SALVOS NA PASTA ROOT\033[0m"
+echo -e "\033[36;37m PAINEL DE GERENCIAMENTO OPENVPN\033[0m"
 echo -e "\033[0;35m------------------------------------------------------------\033[0m"
 echo -e "\033[1;36m[\033[1;31m1\033[1;36m] MONITOR DE USUARIOS OPENVPN \033[1;30m(Monitor!)\033[1;36m
 [\033[1;31m2\033[1;36m] REMOVER OPENVPN \033[1;30m(remoçao do ovpn)\033[1;36m
@@ -88,7 +93,7 @@ echo -e "\033[1;36mQUAL E A SUA OPÇAO?\033[0m"
 read -p ": " opcao
 
 case $opcao in
-  3) nano /etc/openvpn/client-common.txt
+  3) nano /etc/openvpn/client
   ovpn
   exit
   ;;
